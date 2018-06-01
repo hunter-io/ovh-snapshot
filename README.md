@@ -10,7 +10,7 @@ docker run -it \
   -e ENDPOINT="YOUR_PUBLIC_CLOUD_ENDPOINT" \
   -e APPLICATION_KEY="THE_APPLICATION_KEY" \
   -e APPLICATION_SECRET="THE_APPLICATION_SECRET" \
-  firmapi/ovh-snapshot python credentials.py
+  quay.io/hunter-io/ovh-snapshot python credentials.py
 ```
 
 Follow the instructions, and write down the gotten `CONSUMER_KEY`.
@@ -23,7 +23,7 @@ docker run \
   -e APPLICATION_SECRET="THE_APPLICATION_SECRET" \
   -e CONSUMER_KEY="THE_CONSUMER_KEY_FROM_PREVIOUS_STEP" \
   -e PROJECT_ID="YOUR_PROJECT_ID" \
-  firmapi/ovh-snapshot python instances.py
+  quay.io/hunter-io/ovh-snapshot python instances.py
 ```
 
 This command will be useful to retrieve the identifiers of the instances you want to snapshot.
@@ -37,5 +37,10 @@ docker run \
   -e CONSUMER_KEY="THE_CONSUMER_KEY_FROM_PREVIOUS_STEP" \
   -e PROJECT_ID="YOUR_PROJECT_ID" \
   -e INSTANCES="COMMA_SEPARATED_LIST_OF_INSTANCE_TO_SNAPSHOT" \
-  firmapi/ovh-snapshot
+  quay.io/hunter-io/ovh-snapshot
 ```
+
+## TODO
+
+- [ ] Add Cronitor support
+- [ ] Improve the error handling
