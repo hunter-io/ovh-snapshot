@@ -19,3 +19,5 @@ for instance in INSTANCES.split(','):
   )
 
   print('Scheduled snapshot of instance %s' % instance)
+
+print('Finished scheduling the snapshots creation')
