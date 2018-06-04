@@ -2,6 +2,7 @@ import os
 import sys
 
 from client import create_client
+from notifier import notify
 
 PROJECT_ID = os.environ.get('PROJECT_ID')
 INSTANCES = os.environ.get('INSTANCES')
@@ -15,6 +16,8 @@ if NUMBER_SNAPSHOTS_TO_KEEP is None:
   number_snapshots_to_keep = 3
 else:
   number_snapshots_to_keep = int(NUMBER_SNAPSHOTS_TO_KEEP)
+
+notify('run')
 
 client = create_client()
 
@@ -37,5 +40,7 @@ for instance in snapshots_per_instances:
     client.delete('/cloud/project/%s/snapshot/%s' % (PROJECT_ID, snapshot))
 
     print('Scheduled deletion of snapshot %s' % snapshot)
+
+notify('complete')
 
 print('Finished scheduling the snapshots deletion')
