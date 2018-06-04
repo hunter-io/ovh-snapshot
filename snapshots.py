@@ -14,7 +14,7 @@ if PROJECT_ID is None or INSTANCES is None:
 client = create_client()
 
 for instance in INSTANCES.split(','):
-  response = client.post('/cloud/project/%s/instance/%s/snapshot' % (PROJECT_ID, instance),
+  client.post('/cloud/project/%s/instance/%s/snapshot' % (PROJECT_ID, instance),
     snapshotName=instance + '-' + time.strftime('%Y%m%d-%H%M%S')
   )
 
