@@ -39,6 +39,7 @@ docker run \
   -e CONSUMER_KEY="THE_CONSUMER_KEY_FROM_PREVIOUS_STEP" \
   -e PROJECT_ID="YOUR_PROJECT_ID" \
   -e INSTANCES="COMMA_SEPARATED_LIST_OF_INSTANCE_TO_SNAPSHOT" \
+  -e CRONITOR_URL="Cronitor URL to ping (optional)" \
   quay.io/hunter-io/ovh-snapshot
 ```
 
@@ -52,10 +53,10 @@ docker run \
   -e PROJECT_ID="YOUR_PROJECT_ID" \
   -e INSTANCES="COMMA_SEPARATED_LIST_OF_INSTANCE_TO_SNAPSHOT" \
   -e NUMBER_SNAPSHOTS_TO_KEEP=4 (default: 3) \
+  -e CRONITOR_URL="Cronitor URL to ping (optional)" \
   quay.io/hunter-io/ovh-snapshot python cleanup.py
 ```
 
 ## TODO
 
-- [ ] Add Cronitor support
 - [ ] Improve the error handling
