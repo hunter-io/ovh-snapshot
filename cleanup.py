@@ -25,7 +25,7 @@ client = create_client()
 snapshots_per_instances = dict()
 
 for snapshot in client.get('/cloud/project/%s/snapshot' % PROJECT_ID):
-  instance = snapshot.get('name')[:35]
+  instance = snapshot.get('name')[:36]
 
   if instance in INSTANCES.split(','):
     snapshots_per_instances.setdefault(instance, []).append(snapshot.get('id'))
